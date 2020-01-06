@@ -8,3 +8,5 @@ Videos
 *.db
 tags
 
+.gdb_history
+output.txt
