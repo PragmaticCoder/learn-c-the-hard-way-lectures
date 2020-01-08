@@ -1,9 +1,9 @@
 CFLAGS=-Wall -g
 
-all: clean ex9_alvi
+all: clean ex10_alvi
 
 clean:
-	rm -f ex9_alvi
+	rm -f ex10_alvi
 	rm -f output.txt
 	rm -f .gdb_history
 	
