@@ -6,7 +6,7 @@ set logging file output.txt
 set logging on
 
 set arg hello
-b 7
+b main
 r
 
 refresh
