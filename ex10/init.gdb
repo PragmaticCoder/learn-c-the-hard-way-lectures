@@ -5,8 +5,11 @@ set pagination off
 set logging file output.txt
 set logging on
 
-set arg hello
+set arg ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
 b main
+b 71
+
 r
 
 refresh
