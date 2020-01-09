@@ -1,4 +1,4 @@
-CFLAGS=-Wall -g
+CFLAGS = -std=gnu90 -Wall -pedantic -g
 
 .DEFAULT_GOAL := all
 
