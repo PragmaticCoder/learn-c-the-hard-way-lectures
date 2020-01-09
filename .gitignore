@@ -10,3 +10,4 @@ tags
 
 .gdb_history
 output.txt
+.vscode/settings.json
