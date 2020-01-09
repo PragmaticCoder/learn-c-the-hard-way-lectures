@@ -13,6 +13,7 @@ int main(int argc, char *argv[]) {
 
   int num_states = 5;
 
+  // off by one error
   for (i = 0; i < num_states; i++)
     printf("state %d: %s\n", i, states[i]);
 
