@@ -18,7 +18,7 @@ clean: clean-build clean-debug ## Remove all file artifacts
 clean-build: ## Remove all build artifacts
 	@echo "+ $@"
 	@rm -f ex12_alvi
-	@rm -rf *.ta
+	@rm -rf *.tar
 
 .PHONY: clean-debug
 clean-debug: ## Remove all debug artifacts
