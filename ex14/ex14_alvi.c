@@ -1,7 +1,7 @@
 #include <ctype.h>
 #include <stdio.h>
 
-// forward declarations
+/* forward declarations */
 int can_print_it(char ch);
 void print_letters(char arg[]);
 
