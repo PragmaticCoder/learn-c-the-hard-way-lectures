@@ -1,4 +1,4 @@
-CFLAGS = -std=gnu90 -Wall -pedantic -g
+CFLAGS = -std=gnu99 -Wall -pedantic -g
 
 .DEFAULT_GOAL := all
 
@@ -25,6 +25,7 @@ clean-debug: ## Remove all debug artifacts
 	@echo "+ $@"
 	@rm -f output.txt
 	@rm -f .gdb_history
+	@rm -rf vgcore*
 	
 .PHONY: help
 help:
