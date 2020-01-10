@@ -5,7 +5,7 @@ set pagination off
 set logging file output.txt
 set logging on
 
-b main
+b 40
 r
 
 refresh
