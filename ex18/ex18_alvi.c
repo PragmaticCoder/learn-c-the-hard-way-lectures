@@ -50,11 +50,9 @@ int sorted_order(int a, int b) { return a - b; }
 int reverse_order(int a, int b) { return b - a; }
 
 int strange_order(int a, int b) {
-  if (a == 0 || b == 0) {
+  if (a == 0 || b == 0)
     return 0;
-  } else {
-    return a % b;
-  }
+  return a % b;
 }
 
 /**
@@ -111,9 +109,8 @@ int main(int argc, char *argv[]) {
   if (!numbers)
     die("Memory error.");
 
-  for (i = 0; i < count; i++) {
+  for (i = 0; i < count; i++)
     numbers[i] = atoi(inputs[i]);
-  }
 
   test_sorting(numbers, count, sorted_order);
   test_sorting(numbers, count, reverse_order);
