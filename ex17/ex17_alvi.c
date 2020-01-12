@@ -74,6 +74,48 @@ int main(int argc, char *argv[]) {
   char action = argv[2][0];
 
   struct Connection *conn = Database_open(filename, action);
+  int id = 0;
 
+  if (argc > 3)
+    id = atoi(argv[3]);
+
+  if (id >= MAX_ROWS)
+    die("There's not that many records.");
+
+  switch (action) {
+  case 'c':
+    //   Database_create(conn);
+    die("TODO: Not Implemented");
+    break;
+  case 'g':
+    if (argc != 6)
+      die("Need id, name, email to set");
+
+    // Database_set(conn, id, argv[4], argv[5]);
+    // Database_write(conn);
+
+    die("TODO: Not Implemented");
+    break;
+
+  case 'd':
+    if (argc != 4)
+      die("Need id to delete");
+
+    // Database_delete(conn, id);
+    // Database_write(conn);
+    die("TODO: Not Implemented");
+    break;
+
+  case 'l':
+    // Database_list(conn);
+    die("TODO: Not Implemented");
+    break;
+
+  default:
+    die("Invalid action: c=create, g=get, s=set, d=del, l=list");
+  }
+  
+//   Database_close(conn);
+    die("TODO: Not Implemented");
   return 0;
 }
