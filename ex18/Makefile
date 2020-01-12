@@ -9,7 +9,7 @@ all: clean ex18_alvi ## Clean and compile
 .PHONY: release
 release: clean  ## Generate release version
 	@echo "+ $@"
-	@tar cvf ala273_project.tar .
+	@tar -cvzf ala273_project.tar .
 
 .PHONY: clean
 clean: clean-build clean-debug ## Remove all file artifacts
