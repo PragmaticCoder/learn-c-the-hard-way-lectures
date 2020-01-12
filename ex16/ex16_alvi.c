@@ -3,15 +3,15 @@
 #include <stdlib.h>
 #include <string.h>
 
-struct Person {
+struct Person 
+{
     char *name;
     int age;
     int height;
     int weight;
 };
 
-struct Person *Person_create(char *name, int age, int height,
-        int weight)
+struct Person *Person_create(char *name, int age, int height, int weight)
 {
     struct Person *who = malloc(sizeof(struct Person));
     assert(who != NULL);
@@ -40,11 +40,27 @@ void Person_print(struct Person *who)
     printf("\tWeight: %d\n", who->weight);
 }
 
+struct Person Person_create_static(char *name, int age, int height, int weight)
+{
+    struct Person who;
+
+    who.name = strdup(name);
+    who.age = age;
+    who.height = height;
+    who.weight = weight;
+
+    return who;
+}
+
+void Person_destroy_static(struct Person p)
+{
+    free(p.name);
+}
+
 int main(int argc, char *argv[])
 {
     // make two people structures
     struct Person *joe = Person_create("Joe Alex", 32, 64, 140);
-
     struct Person *frank = Person_create("Frank Blank", 20, 72, 180);
 
     // print them out and where they are in memory
@@ -62,12 +78,16 @@ int main(int argc, char *argv[])
 
     frank->age += 20;
     frank->weight += 20;
-    free(frank);
     Person_print(frank);
 
     // destroy them both so we clean up
     Person_destroy(joe);
     Person_destroy(frank);
+
+    struct Person staticPerson = Person_create_static("John Sims", 30, 69, 159);
+
+    Person_print(&staticPerson);
+    Person_destroy_static(staticPerson);
 
     return 0;
 }
