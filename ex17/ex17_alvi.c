@@ -65,6 +65,19 @@ struct Connection *Database_open(const char *filename, const char mode) {
   return conn;
 }
 
+void Database_close(struct Connection *conn) {
+  if (!conn)
+    die("Memory Error");
+
+  if (conn->file)
+    fclose(conn->file);
+
+  if (conn->db)
+    free(conn->db);
+
+  free(conn);
+}
+
 int main(int argc, char *argv[]) {
 
   if (argc < 3)
@@ -114,8 +127,8 @@ int main(int argc, char *argv[]) {
   default:
     die("Invalid action: c=create, g=get, s=set, d=del, l=list");
   }
-  
-//   Database_close(conn);
-    die("TODO: Not Implemented");
+
+  Database_close(conn);
+
   return 0;
 }
