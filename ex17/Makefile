@@ -3,7 +3,7 @@ CFLAGS = -std=gnu99 -Wall -pedantic -g
 .DEFAULT_GOAL := all
 
 .PHONY: all
-all: clean ex16_alvi ## Clean and compile
+all: clean ex17_alvi ## Clean and compile
 	@echo "+ $@"
 
 .PHONY: release
@@ -17,7 +17,7 @@ clean: clean-build clean-debug ## Remove all file artifacts
 .PHONY: clean-build
 clean-build: ## Remove all build artifacts
 	@echo "+ $@"
-	@rm -f ex16_alvi
+	@rm -f ex17_alvi
 	@rm -rf *.tar
 
 .PHONY: clean-debug
@@ -29,5 +29,5 @@ clean-debug: ## Remove all debug artifacts
 	
 .PHONY: help
 help:
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-16s\033[0m %s\n", $$1, $$2}'
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-17s\033[0m %s\n", $$1, $$2}'
 	@echo "Contact author for more help: ala273@mail.usask.ca"
