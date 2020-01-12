@@ -1,4 +1,6 @@
-CFLAGS = -std=gnu99 -Wall -pedantic -g
+CC=gcc
+CFLAGS=-std=gnu99 -g -O2 -Wall -Wextra -pedantic -DNDEBUG $(OPTFLAGS)
+LIBS=-ldl $(OPTLIBS)
 
 .DEFAULT_GOAL := all
 
