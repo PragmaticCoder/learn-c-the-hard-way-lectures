@@ -71,7 +71,6 @@ void Database_create(struct Connection *conn) {
   for (i = 0; i < MAX_ROWS; i++) {
     /* Make a Prototype to initialize it */
     struct Address addr = {.id = i, .set = 0};
-
     /* and then assigning it */
     conn->db->rows[i] = addr;
   }
