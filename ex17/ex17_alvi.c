@@ -65,6 +65,18 @@ struct Connection *Database_open(const char *filename, const char mode) {
   return conn;
 }
 
+void Database_create(struct Connection *conn) {
+
+  int i = 0;
+  for (i = 0; i < MAX_ROWS; i++) {
+    /* Make a Prototype to initialize it */
+    struct Address addr = {.id = i, .set = 0};
+
+    /* and then assigning it */
+    conn->db->rows[i] = addr;
+  }
+}
+
 void Database_close(struct Connection *conn) {
   if (!conn)
     die("Memory Error");
@@ -97,9 +109,9 @@ int main(int argc, char *argv[]) {
 
   switch (action) {
   case 'c':
-    //   Database_create(conn);
-    die("TODO: Not Implemented");
+    Database_create(conn);
     break;
+
   case 'g':
     if (argc != 6)
       die("Need id, name, email to set");
