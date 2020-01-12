@@ -8,6 +8,7 @@ typedef int (*compare_cb)(int a, int b);
 
 /* Helper Function: Used for Error Handling */
 void die(const char *message) {
+
   if (errno) {
     perror(message);
   } else {
