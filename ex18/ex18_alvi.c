@@ -3,6 +3,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+/* Cases for pointer functions */
+typedef int (*compare_cb)(int a, int b);
+
 /* Helper Function: Used for Error Handling */
 void die(const char *message) {
   if (errno) {
