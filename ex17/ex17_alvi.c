@@ -14,6 +14,15 @@ struct Address {
   char email[MAX_DATA];
 };
 
+struct Database {
+  struct Address rows[MAX_ROWS];
+};
+
+struct Connection {
+  FILE *file;
+  struct Database *db;
+};
+
 void die(const char *message) {
 
   if (errno)
