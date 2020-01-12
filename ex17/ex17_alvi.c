@@ -15,11 +15,12 @@ struct Address {
 };
 
 void die(const char *message) {
-  if (errno) {
+
+  if (errno)
     perror(message);
-  } else {
+  else
     printf("ERROR: %s\n", message);
-  }
+
   exit(1);
 }
 
