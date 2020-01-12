@@ -19,6 +19,7 @@ void die(const char *message) {
 }
 
 int main(int argc, char *argv[]) {
+
   if (argc < 2)
     die("USAGE: ex18_alvi 4 3 1 5 6");
 
