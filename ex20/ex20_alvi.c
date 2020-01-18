@@ -138,15 +138,20 @@ int main(int argc, char *argv[]) {
   test_sorting(numbers, count, strange_order);
 
   free(numbers);
-
+  numbers = NULL;
+  
+  check(numbers == NULL, "Checking if number was freed properly");
+  error:
+    printf("numbers != NULL\n");
+  
+  debug("calling dump with %p", numbers);
   printf("SORTED:");
-  dump(sorted_order);
+  dump(numbers);
 
   // Injected Error 1
   // debug("calling destroy with %p", sorted_order);
   // destroy(sorted_order);
 
-  // Injected Error 2
   printf("SORTED:");
   dump(NULL);
 

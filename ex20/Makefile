@@ -5,7 +5,7 @@ LIBS=-ldl $(OPTLIBS)
 .DEFAULT_GOAL := all
 
 .PHONY: all
-all: clean ex20_alvi ex20_obo ## Clean and compile
+all: clean ex20_alvi ## Clean and compile
 	@echo "+ $@"
 
 .PHONY: release
