@@ -2,7 +2,7 @@
 
 # This script is used to automate debugging
 usage() {
-  echo "Usage ${0} [-d][-v]">&2
+  echo "Usage ${0} [-d][-v]" >&2
   echo 'Debug with automated tools'
   echo '-d Runs in debug mode with GDB.'
   echo '-v Runs in debug mode with Valgrind.'
@@ -23,18 +23,17 @@ debug_valgrind() {
 
 make clean && clear && make
 
-while getopts dv OPTION
-do
+while getopts dv OPTION; do
   case ${OPTION} in
-    d)
-      debug_gdb
-      ;;
-    v)
-      debug_valgrind
-      ;;
-    ?)
-      usage
-      ;;
+  d)
+    debug_gdb
+    ;;
+  v)
+    debug_valgrind
+    ;;
+  ?)
+    usage
+    ;;
   esac
 done
 

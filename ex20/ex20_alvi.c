@@ -101,9 +101,15 @@ void destroy(compare_cb cmp) {
   check(cmp != NULL, "Invalid function ptr to dump.");
   unsigned char *data = (unsigned char *)cmp;
 
+  debug("data is %p:%s", data, data);
+
   for (i = 0; i < 25; i++) {
+    debug("before data[%d]=%d", i, data[i]);
     data[i] = i;
+    debug("after data[i]= %d", data[i]);
   }
+
+  debug("Exited loop, data now: %s", data);
 
   printf("\n");
 
@@ -136,7 +142,9 @@ int main(int argc, char *argv[]) {
   printf("SORTED:");
   dump(sorted_order);
 
-  destroy(sorted_order);
+  // Error 1
+  // debug("calling destroy with %p", sorted_order);
+  // destroy(sorted_order);
 
   printf("SORTED:");
   dump(sorted_order);

@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-std=gnu99 -g -O2 -Wall -Wextra -pedantic -DNDEBUG $(OPTFLAGS)
+CFLAGS=-std=gnu99 -g -O2 -Wall -Wextra -pedantic $(OPTFLAGS)
 LIBS=-ldl $(OPTLIBS)
 
 .DEFAULT_GOAL := all
