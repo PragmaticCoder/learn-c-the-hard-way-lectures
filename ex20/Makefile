@@ -5,7 +5,7 @@ LIBS=-ldl $(OPTLIBS)
 .DEFAULT_GOAL := all
 
 .PHONY: all
-all: clean ex20_alvi ## Clean and compile
+all: clean ex20_alvi ex20_obo ## Clean and compile
 	@echo "+ $@"
 
 .PHONY: release
@@ -20,6 +20,7 @@ clean: clean-build clean-debug ## Remove all file artifacts
 clean-build: ## Remove all build artifacts
 	@echo "+ $@"
 	@rm -f ex20_alvi
+	@rm -f ex20_obo
 	@rm -rf *.tar.gz
 
 .PHONY: clean-debug

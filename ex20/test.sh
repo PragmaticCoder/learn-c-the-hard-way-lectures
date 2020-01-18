@@ -1,3 +1,3 @@
-rm ex20
-make ex20
-./ex20 1 82 39 44 1 2 3 4 9 8 01 10 11
+rm ex20_alvi
+make ex20_alvi
+gdb -x .gdbinit ./ex20_alvi
