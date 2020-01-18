@@ -1,3 +1,2 @@
-rm ex20_alvi
-make ex20_alvi
-gdb -x .gdbinit ./ex20_alvi
+make clean && clear && make
+valgrind ./ex20_alvi 1 82 39 44 1 2 3 4 9 8 01 10 11 

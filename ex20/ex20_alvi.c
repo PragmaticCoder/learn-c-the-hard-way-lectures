@@ -106,7 +106,22 @@ error:
     printf("\n");
 }
 
+void destroy(compare_cb cmp)
+{
+    int i = 0;
 
+    check(cmp != NULL, "Invalid function ptr to dump.");
+    unsigned char *data = (unsigned char *)cmp;
+
+    for(i = 0; i < 25; i++) {
+        data[i] = i;
+    }
+
+    printf("\n");
+
+error:
+    printf("\n");
+}
 
 int main(int argc, char *argv[])
 {
@@ -130,7 +145,10 @@ int main(int argc, char *argv[])
     free(numbers);
 
     printf("SORTED:");
-    dump(numbers);
+    dump(sorted_order);
+
+    destroy(sorted_order);
+    dump(sorted_order);
 
     return 0;
 }
