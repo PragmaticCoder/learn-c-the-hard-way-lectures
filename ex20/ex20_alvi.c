@@ -142,12 +142,13 @@ int main(int argc, char *argv[]) {
   printf("SORTED:");
   dump(sorted_order);
 
-  // Error 1
+  // Injected Error 1
   // debug("calling destroy with %p", sorted_order);
   // destroy(sorted_order);
 
+  // Injected Error 2
   printf("SORTED:");
-  dump(sorted_order);
+  dump(NULL);
 
   return 0;
 }
