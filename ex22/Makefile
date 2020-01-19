@@ -2,11 +2,20 @@ CC=gcc
 CFLAGS=-std=gnu99 -g -O2 -Wall -Wextra -pedantic $(OPTFLAGS)
 LIBS=-ldl $(OPTLIBS)
 
+EX_22_SRC = ex22_alvi.c
+EX_22_OBJS = $(EX_22_SRC:.c=.o)
+
 .DEFAULT_GOAL := all
 
 .PHONY: all
-all: clean ex22_alvi ## Clean and compile
+all: clean ex22_main_alvi ## Clean and compile
 	@echo "+ $@"
+
+ex22_main_alvi: $(EX_22_OBJS) ex22_main_alvi.c
+	$(CC) $(CFLAGS) $^ -o $@
+
+$(EX_22_OBJS): $(EX_22_SRC)
+	$(CC) -c $(CFLAGS) $^
 
 .PHONY: release
 release: clean  ## Generate release version
@@ -19,8 +28,9 @@ clean: clean-build clean-debug ## Remove all file artifacts
 .PHONY: clean-build
 clean-build: ## Remove all build artifacts
 	@echo "+ $@"
-	@rm -f ex22_alvi
+	@rm -rf *.o *.a *.exe
 	@rm -rf *.tar.gz
+	@rm -rf ex22_main_alvi
 
 .PHONY: clean-debug
 clean-debug: ## Remove all debug artifacts

@@ -11,13 +11,13 @@ usage() {
 
 debug_gdb() {
   echo 'Debugging with GDB'
-  gdb -x .gdbinit ./ex22_alvi
+  gdb -x .gdbinit ./ex22_main_alvi
   exit 0
 }
 
 debug_valgrind() {
   echo 'Debugging with Valgrind'
-  valgrind ./ex22_alvi
+  valgrind ./ex22_main_alvi
   exit 0
 }
 
@@ -37,5 +37,5 @@ while getopts dv OPTION; do
   esac
 done
 
-./ex22_alvi
+./ex22_main_alvi
 exit 0
