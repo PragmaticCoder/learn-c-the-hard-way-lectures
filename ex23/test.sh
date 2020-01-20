@@ -11,7 +11,7 @@ usage() {
 
 debug_gdb() {
   echo 'Debugging with GDB'
-  gdb -x .gdbinit ./ex22_main_alvi
+  gdb -x .gdbinit ./ex23_alvi
   exit 0
 }
 
