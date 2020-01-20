@@ -37,6 +37,9 @@ tests: CFLAGS += $(TARGET)
 tests: $(TESTS)
 	sh ./tests/runtests.sh
 
+valgrind:
+	VALGRIND="valgrind --log-file=/tmp/valgrind-%p.log" $(MAKE)
+
 # The Cleaner
 clean:
 	rm -rf build $(OBJECTS) $(TESTS)
