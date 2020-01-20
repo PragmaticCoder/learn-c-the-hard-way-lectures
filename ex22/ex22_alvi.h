@@ -6,11 +6,12 @@ struct State {
     int the_age;
 };
 
-extern int THE_SIZE;
-
 // gets and sets an internal static variable in ex22.c
 int get_age(struct State *state);
 void set_age(struct State *state, int age);
+
+int get_size(struct State *state);
+void set_size(struct State *state, int age);
 
 // updates a static variable that's inside update_ratio
 double update_ratio(double ratio);
