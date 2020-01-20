@@ -38,10 +38,10 @@ int main(int argc, char *argv[]) {
 
   // test out THE_SIZE extern
   log_info("THE_SIZE is: %d", THE_SIZE);
-  print_size();
+  print_size(state);
 
   log_info("THE SIZE is now: %d", THE_SIZE);
-  print_size();
+  print_size(state);
 
   // test the ratio function static
   log_info("Ratio at first: %f", update_ratio(2.0));
