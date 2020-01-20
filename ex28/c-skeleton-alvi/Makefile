@@ -51,10 +51,15 @@ clean:
 install: all
 	install -d $(DESTDIR)/$(PREFIX)/lib/
 	install $(TARGET) $(DESTDIR)/$(PREFIX)/lib/
+	install $(SO_TARGET) $(DESTDIR)/$(PREFIX)/lib/
+	install -d $(DESTDIR)/$(PREFIX)/include/lcthw/
+	install $(HEADERS) $(DESTDIR)/$(PREFIX)/include/lcthw
 
 # The Checker
+BADFUNCS='[^_.>a-zA-Z0-9](str(n?cpy|n?cat|xfrm|n?dup|str|pbrk|tok|_)\
+		|stpn?cpy|a?sn?printf|byte_)'
+
 check:
 	@echo Files with potentially dangerous functions.
-	@egrep '[^_.>a-zA-Z0-9](str(n?cpy|n?cat|xfrm|n?dup|str|pbrk|tok|_)\
-		|stpn?cpy|a?sn?printf|byte_)' $(SOURCES) || true
+	@egrep $(BADFUNCS) $(SOURCES) || true
 
